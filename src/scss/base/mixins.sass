@@ -1,0 +1,6 @@
+@mixin adaptedValue($property,$from,$to,$fromWidth:$containerWidth,$toWidth:$minWidth)
+    #{$property}: #{$to + px}
+    @media (min-width: #{$toWidth + px})
+        #{$property}: calc(#{$to + px} + #{$from - $to} / #{$fromWidth - $toWidth} * (100vw - #{$toWidth + px}))
+    @media (min-width: #{$fromWidth + px})
+        #{$property}: #{$from + px}

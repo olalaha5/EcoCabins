@@ -1,0 +1,33 @@
+.footer
+    padding: rem(33) 0
+    background: #222F33
+    &__container
+        display: flex
+        justify-content: space-between
+        align-items: center
+        flex-wrap: wrap
+    &__links
+        display: flex
+        gap: rem(30)
+        font-size: rem(12)
+        font-weight: 500
+        line-height: normal
+        opacity: 0.6
+    &__link
+        &:hover
+            text-decoration: underline
+    &__email
+        font-size: rem(12)
+        font-weight: 500
+        line-height: normal
+        opacity: 0.6
+        &:hover
+            text-decoration: underline
+    &__logo
+        transition: 0.5s
+        &:hover
+            transform: scale(1.05)
+    @media (max-width: em(580))
+        &__container
+            flex-direction: column
+            gap: rem(15)

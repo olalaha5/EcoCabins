@@ -1,0 +1,306 @@
+// при наличии файла шрифтов 
+// @import fonts.sass
+@import base/functions.sass
+
+$fontFamily: "Rubik"
+$fontSize: rem(14)
+
+// основные цвета
+$mainColor: #fff // цвет шрифта по умолчанию
+
+// настройки контейнера
+
+$minWidth: 320 // без px
+$maxWidth: 1920 // без px
+$maxWidthContainer: 810// без px - containerPadding*2
+$containerPadding: 15 // с одной стороны; без px
+
+$containerWidth: $containerPadding + $maxWidthContainer
+
+@import base/mixins.sass
+@import base/null.sass
+@import modules/header.sass
+@import modules/footer.sass
+
+body
+.lock
+    overflow: hidden
+    touch-action: none
+
+.wrapper
+    display: flex
+    overflow: hidden
+    flex-direction: column
+    min-height: 100%
+    > main
+        flex: 1 1 auto
+
+[class*="__container"]
+        max-width: #{$maxWidthContainer + px} // можно поменять
+        margin: 0 auto
+        padding: 0px #{$containerPadding + px}
+        box-sizing: content-box
+
+/* код выше не удалять */
+.title
+    color: #FFF
+    font-family: Merriweather
+    font-size: rem(30)
+    font-weight: 900
+    line-height: normal
+    @media (max-width: em(767))
+        font-size: rem(25)
+    &_black
+        color: #222F33
+
+.head-section
+    position: relative
+    min-height: 100vh
+    display: flex
+    align-items: center
+    padding-top: rem(70)
+    padding-bottom: rem(30)
+
+    &__background
+        position: absolute
+        top: 0
+        right: 0
+        left: 0
+        bottom: 0
+        z-index: -2
+        background-color: #222F33
+    &__background-image
+        height: 100%
+        width: 100%
+        object-fit: cover
+        z-index: -2
+    &__container
+        display: flex
+        align-items: center
+    &__col1
+        flex: 0 0 rem(440)
+    &__col2
+        flex: 0 1 rem(370)
+        display: flex
+        justify-content: center
+        &:hover
+            text-decoration: underline
+    &__content
+        display: flex
+        row-gap: rem(12)
+        flex-direction: column
+    &__lable
+        font-size: 1rem
+        font-weight: 500
+        line-height: normal
+        opacity: 0.8
+    &__play-link
+        display: flex
+        align-items: center
+        gap: rem(10)
+    &__play-text
+        font-size: rem(12)
+        font-weight: 500
+        line-height: normal
+    @media (max-width: em(767))
+        &__col1
+            flex: 0 0 content
+        &__col2
+            flex: 0 0 content
+        &__container
+            flex-direction: column
+            justify-content: center
+            align-items: flex-start
+            gap: rem(10)
+
+.second-section
+
+    &__container
+        // padding-top: rem(25)
+        // padding-bottom: rem(57)
+        display: flex
+        gap: rem(83)
+        position: relative
+        &::after
+            content: ''
+            position: absolute
+            bottom: 0
+            height: rem(139)
+            background: #222F33
+            width: calc(50vw - 50% + rem(15 + 292 + 15))
+            right: calc(50% - 50vw - rem(15))
+            z-index: -2
+    &__content
+        display: flex
+        gap: rem(13)
+        flex-direction: column
+        align-items: flex-start
+        flex: 1 1 auto
+        padding-top: rem(25)
+        padding-bottom: rem(57)
+        position: relative
+        &::before
+            content: ''
+            position: absolute
+            top: - rem(37)
+            height: rem(38)
+            background: #fff
+            width: calc(50vw + 50% + rem(84))
+            left: calc(50% - 50vw)
+
+    &__slider-wrapper
+        flex: 0 0 rem(325)
+        transform: translate(0,- rem(71))
+    &__text
+        color: #646D70
+        font-size: rem(14)
+        line-height: 185.714%
+    &__button
+        color: #606B74
+        text-align: center
+        font-size: rem(12)
+        font-weight: 500
+        line-height: normal
+        padding: rem(10) rem(15)
+        border-radius: rem(4)
+        border: 1px solid #646D70
+        cursor: pointer
+        transition: 0.5s
+        &:hover
+            padding-top: rem(8)
+            padding-bottom: rem(12)
+
+    &__img
+        width: auto
+        height: auto
+    .slick-slider
+        overflow: hidden
+        position: relative
+        .slick-arrow
+            font-size: 0
+            position: absolute
+            top: 50%
+            z-index: 1000
+            background: #fff
+            opacity: 0.4
+            width: rem(40)
+            height: rem(40)
+            border-radius: 50%
+            cursor: pointer
+            transition: 0.5s
+            &:hover
+                opacity: 1
+
+            &::before
+                font-size: rem(32)
+                transform: translate(0,-50%)
+        .slick-prev
+            left: rem(10)
+            &::before
+                content: '<'
+        .slick-next
+            right: rem(10)
+            &::before
+                content: '>'
+        .slick-dots
+            display: flex
+            transform: translate(-50%,0)
+            justify-content: center
+            position: absolute
+            bottom: rem(50)
+            gap: rem(8)
+            left: 50%
+
+            .slick-active
+                button
+                    opacity: 1
+                    &:hover
+                        opacity: 1
+            li
+                list-style: none
+                button
+                    width: rem(10)
+                    height: rem(10)
+                    font-size: 0
+                    background: #fff
+                    opacity: 0.4
+                    width: rem(10)
+                    height: rem(10)
+                    border-radius: 50%
+                    transition: 0.5s
+                    cursor: pointer
+                    &:hover
+                        opacity: 0.7
+
+    @media (max-width: em(767))
+        &__container
+            padding-top: rem(25)
+            padding-bottom: rem(57)
+            flex-direction: column
+            gap: rem(10)
+            &::after
+                width: 0
+        &__content
+            padding: 0
+            &::before
+                width: 0
+        &__slider-wrapper
+            flex: 1 1 auto
+            transform: none
+
+.innovatie
+    background-color: #222F33
+    &__container
+        display: flex
+        flex-direction: column
+        gap: rem(8)
+        padding-top: rem(72)
+        padding-bottom: rem(81)
+    &__content
+        display: flex
+        gap: rem(43)
+    &__text
+        font-size: rem(14)
+        line-height: 171.429%
+        opacity: 0.7
+    @media (max-width: em(425))
+        &__content
+            flex-direction: column
+
+.info
+    &__container
+        display: flex
+        padding-top: rem(85)
+        padding-bottom: rem(85)
+        justify-content: space-between
+        gap: rem(75)
+    &__img
+        flex: 1 1 50%
+        display: flex
+        align-items: center
+        img
+            width: 100%
+    &__title
+        font-family: Merriweather
+        font-size: rem(18)
+        font-weight: 900
+        line-height: normal
+        color: #222F33
+    &__text
+        font-size: rem(12)
+        font-weight: 400
+        line-height: 183.333%
+        color: #646D70
+        opacity: 0.7
+    &__grid
+        flex: 1 1 50%
+        display: grid
+        gap: rem(30) rem(50)
+        grid-template-columns: repeat( 2,1fr )
+    @media (max-width: em(767))
+        &__container
+            flex-direction: column-reverse
+            gap: rem(10)
+    @media (max-width: em(424))
+        &__grid
+            column-gap: rem(15)

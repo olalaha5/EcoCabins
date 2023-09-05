@@ -1,0 +1,72 @@
+extends html/layout.pug
+        
+block head 
+    //- сдесь можно добавить код к тегу head(должен быть отступ)
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Poppins:wght@300;400;500&family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+    title EcoCabins
+    link(rel="shortcut icon" href="img/favicon.svg")
+    //--------------------------------------
+
+block content
+    //- сдесь можно добавить код к тегу body(должен быть отступ)
+    .wrapper 
+        include html/header.pug  
+        main.main 
+            section.main__section.head-section
+                .head-section__container 
+                    .head-section__col1 
+                        .head-section__content
+                            .head-section__lable Duurzame tiny huisjes
+                            h2.head-section__title.title Een ecologisch tiny huisje is zoveel mogelijk opgebouwd uit duurzame natuurlijke materialen
+                    .head-section__col2
+                        a(href="#").head-section__play-link
+                            .head-section__play-button 
+                                img(src="img/Play.svg", alt="play button")
+                            .head-section__play-text Bekijk de film
+                .head-section__background
+                    img(src="img/bg.png", alt="backGround").head-section__background-image
+            section.main__section.second-section
+                .second-section__container
+                    .second-section__content 
+                        .second-section__title.title.title_black Duurzame materialen
+                        .second-section__text Alle EcoCabins hebben een hoge isolatiewaarde, worden geproduceerd met indien mogelijk duurzame en/of natuurlijke materialen en hebben als opvallende uiterlijke kenmerk de ‘ronde hoeken’, mogelijk gemaakt door het specifieke materiaalgebruik. De voordelen van bouwen met hout zijn legio: hout is licht, flexibel, isoleert goed en bouwt snel en efficiënt. 
+                        button(type="button").second-section__button Lees meer
+                    .second-section__slider-wrapper
+                        .second-section__slider
+                            img(src="img/IMG.png", alt="bg").second-section__img
+                            img(src="img/IMG.png", alt="bg").second-section__img
+                            img(src="img/IMG.png", alt="bg").second-section__img
+            section.main__section.innovatie
+                .innovatie__container 
+                    .innovatie__title.title Innovatie
+                    .innovatie__content 
+                        .innovatie__text Wij hebben als doel om de EcoCabins voortdurend verder te ontwikkelen en innoveren, zodat de EcoCabins uiteindelijk 100% duurzaam en circulair zijn. Voorwaarde hierbij is dat de EcoCabins betaalbaar blijven. Met behulp van de zon, de wind en de beste isolatie geniet u van.
+                        .innovatie__text Alle EcoCabins hebben een hoge isolatiewaarde, worden geproduceerd met indien mogelijk duurzame en/of natuurlijke materialen en hebben als opvallende uiterlijke kenmerk de ‘ronde hoeken’, mogelijk gemaakt door het specifieke materiaalgebruik De voordelen van bouwen.
+            section.main__section.info
+                .info__container 
+                    .info__img 
+                        img(src="img/IMG2.png", alt="img")
+                    .info__grid 
+                        .info__ceil
+                            .info__title Hout
+                            .info__text De draagconstructies van EcoCabins bestaan uit hout. Hout is duurzaam en.
+                        .info__ceil
+                            .info__title Glaswol isolatie
+                            .info__text De combinatie van glaswol met een houtskelet constructie geeft een.
+                        .info__ceil
+                            .info__title Afwerking
+                            .info__text De draagconstructies van EcoCabins bestaan uit hout. Hout is duurzaam en.
+                        .info__ceil
+                            .info__title Triple glas
+                            .info__text De combinatie van glaswol met een houtskelet constructie geeft een.
+                        .info__ceil
+                            .info__title Stalen onderstel
+                            .info__text Het stalen onderstel is sterk zijn en heeft de benodigde stijfheid die
+                        .info__ceil
+                            .info__title Infrarood vloer
+                            .info__text De vloer wordt opgewarmd middels opgewekte warmte uit eigen zonne-energie.
+        include html/footer.pug 
+    //--------------------------------------
+        
